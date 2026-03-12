@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!-- saved from url=(0262)file:///C:/Users/Renato%20Rangel/Transmiss%C3%A3o%20no%20Google%20Drive/Outros%20computadores/Meu%20modelo%20Computador/Meu%20Drive/Advogado/Escritorio/VisualLaw/01_PROJETOS/Adriana_Yokemura/02_Analise_DeepSeek/Prompts_HTML/Analisar%204%20dos%202%20arquivos.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Contradições · Ação Demarcatória</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+        body {
+            background: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 32px;
+            overflow: hidden;
+            padding: 40px 48px;
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0b2b4f;
+            border-left: 12px solid #c0392b;
+            padding-left: 24px;
+            margin: 40px 0 30px 0;
+            page-break-before: always;
+            break-before: page;
+        }
+        h1:first-of-type {
+            margin-top: 0;
+            page-break-before: avoid;
+            break-before: avoid;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1a3e6f;
+            margin: 40px 0 20px 0;
+            border-bottom: 3px solid #d4e0eb;
+            padding-bottom: 8px;
+        }
+        h3 {
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin: 30px 0 15px;
+        }
+        .badge {
+            display: inline-block;
+            background: #e9ecf3;
+            border-radius: 40px;
+            padding: 4px 16px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            margin-right: 12px;
+        }
+        .doc-a {
+            background: #fdeded;
+            border-left: 8px solid #b03a2e;
+            padding: 24px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+        .doc-b {
+            background: #ecf3fa;
+            border-left: 8px solid #1f618d;
+            padding: 24px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+        .contradiction-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin: 30px 0;
+        }
+        .card {
+            flex: 1 1 280px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 20px rgba(0,20,40,0.08);
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+            transition: 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 30px rgba(0,20,40,0.12);
+        }
+        .card .title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .card .title span {
+            background: #c0392b;
+            color: white;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 700;
+        }
+        .card.b .title span {
+            background: #1f618d;
+        }
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        .evidence-table th {
+            background: #1a3e6f;
+            color: white;
+            padding: 12px;
+            font-weight: 500;
+            text-align: left;
+        }
+        .evidence-table td {
+            padding: 12px;
+            border-bottom: 1px solid #d0dbe9;
+            vertical-align: top;
+        }
+        .evidence-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .pageloc {
+            font-family: 'Courier New', monospace;
+            background: #edf2f7;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0 20px;
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #b0c4de;
+            border-radius: 4px;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+        .timeline-event {
+            background: white;
+            border: 3px solid #1f618d;
+            border-radius: 40px;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 2;
+            background: white;
+            margin: 10px 0;
+            min-width: 100px;
+            text-align: center;
+        }
+        .timeline-event span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: #2c3e50;
+            margin-top: 4px;
+        }
+        .graphic-diff {
+            display: flex;
+            align-items: stretch;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        .graphic-col {
+            flex: 1 1 280px;
+            background: #f2f6fc;
+            border-radius: 32px;
+            padding: 24px;
+            position: relative;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .graphic-col.a {
+            background: #fee9e7;
+        }
+        .graphic-col.b {
+            background: #e3effa;
+        }
+        .connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #4a5e77;
+        }
+        .error-item {
+            background: #fcf4e8;
+            border-left: 6px solid #e67e22;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 12px;
+        }
+        .error-item strong {
+            color: #b85e00;
+        }
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 2px dashed #b8c9dc;
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1a3e6f;
+        }
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; padding: 20px; }
+            h1 { break-before: page; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- cabeçalho visual -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap;">
+        <div>
+            <span style="background: #0b2b4f; color: white; padding: 8px 24px; border-radius: 40px; font-weight: 500;">📌 INFográfico jurídico</span>
+            <h1 style="border-left-color: transparent; padding-left: 0; margin: 20px 0 0 0; font-size: 2.2rem;">Ação Demarcatória<br><span style="font-size: 1.2rem; color: #2c3e50; font-weight: 400;">xxxxxx-xx.2024.8.21.0022</span></h1>
+        </div>
+        <div style="background: #eef3f9; padding: 12px 24px; border-radius: 60px;">
+            <span class="badge">📄 Documento A (inicial)</span>
+            <span class="badge">📋 Documento B (contestação)</span>
+        </div>
+    </div>
+
+    <!-- NOMES OBRIGATÓRIOS (conforme formato) -->
+    <div style="background: #dde9f5; padding: 20px; border-radius: 28px; margin-bottom: 30px;">
+        <p style="font-size: 1.3rem;"><span style="font-weight: 700;">👤 Autora:</span> Fulana de Tal</p>
+        <p style="font-size: 1.3rem;"><span style="font-weight: 700;">👤 Réu:</span> Beltrano da Silva</p>
+    </div>
+
+    <!-- ideia principal DOC A -->
+    <h2>📌 Ideia principal – Documento A (inicial)</h2>
+    <div class="doc-a">
+        <p style="font-size: 1.2rem; line-height: 1.6;">A autora, <strong>Fulana da Silva</strong>, proprietária do imóvel matriculado sob nº <strong>56.456</strong> (Lote 2849), alega que o réu, <strong>Beltrano da Silva</strong>, dono do imóvel contíguo (matrícula 87.296 – Lote 2819), construiu um muro que invade aproximadamente <strong>1.000 m²</strong> de sua propriedade. Baseia-se em levantamento topográfico planimétrico (eng. Agrimessor), imagens de satélite (Google Earth) e confrontação das matrículas. Requer a <strong>demarcação dos limites</strong>, a <strong>reintegração de posse</strong> da área invadida e a <strong>suspensão liminar das obras</strong> do réu.</p>
+    </div>
+
+    <!-- ideia principal DOC B -->
+    <h2>📋 Ideia principal – Documento B (contestação)</h2>
+    <div class="doc-b">
+        <p style="font-size: 1.2rem; line-height: 1.6;">O réu contesta integralmente o pedido. Sustenta que o muro foi erguido exatamente sobre a <strong>linha divisória histórica</strong> (antiga cerca de arame), existente há mais de <strong>70 anos</strong>. Apresenta fotografias aéreas desde 1953, levantamento topográfico do mesmo engenheiro (2016) que demonstra a cerca limítrofe, mapas do GeoPelotas (cadastro municipal) e certidão da Prefeitura que aponta divergência na área declarada pela autora (57.277 m² oficiais contra 63.075 m² pretendidos). Argui preliminares de <strong>incorreção do valor da causa</strong>, <strong>carência de ação</strong> (limites já definidos) e, no mérito, <strong>improcedência</strong>; além de <strong>exceção de usucapião</strong> (posse ad usucapionem por mais de 40 anos).</p>
+    </div>
+
+    <!-- CONTRADIÇÕES (como B contradiz A) -->
+    <h2>⚖️ Como o Documento B contradiz o Documento A</h2>
+    <div class="contradiction-grid">
+        <div class="card">
+            <div class="title"><span>A</span> Alegação de invasão</div>
+            <p>Autora afirma que o réu construiu muro dentro de seu terreno, avançando 9,14 m ao norte, com base em levantamento de 2024.</p>
+        </div>
+        <div class="card b">
+            <div class="title"><span>B</span> Defesa de limite histórico</div>
+            <p>Réu apresenta fotos aéreas desde 1953 e levantamento de 2016 (mesmo engenheiro) que mostram a cerca original exatamente onde está o muro – sem qualquer invasão.</p>
+        </div>
+        <div class="card">
+            <div class="title"><span>A</span> Área do imóvel da autora</div>
+            <p>Petição inicial menciona área de 63.075,30 m² (laudo particular).</p>
+        </div>
+        <div class="card b">
+            <div class="title"><span>B</span> Contradição cadastral</div>
+            <p>Certidão municipal (Prefeitura de Pelotas) atesta área real de 57.277,07 m² – diferença de quase 6.000 m².</p>
+        </div>
+        <div class="card">
+            <div class="title"><span>A</span> Posse recente</div>
+            <p>Autora alega posse desde 2012 e que a construção do muro ocorreu há menos de 2 anos.</p>
+        </div>
+        <div class="card b">
+            <div class="title"><span>B</span> Posse antiga (usucapião)</div>
+            <p>Antecessores do réu possuem a faixa de terra há mais de 40 anos (posse mansa e pacífica). Exceção de usucapião arguida com base no art. 1.238 CC e art. 550 CC/1916.</p>
+        </div>
+    </div>
+
+    <!-- LOCALIZAÇÃO DAS PROVAS (página/linha aproximada) -->
+    <h2>🔍 Localização das provas nos documentos</h2>
+    <table class="evidence-table">
+        <tbody><tr><th>Documento</th><th>Prova / elemento</th><th>Página (aprox.)</th><th>Contexto / linha</th></tr>
+        <tr><td><strong>A</strong></td><td>Medição Google Earth – área edificada (5.170 m²)</td><td>p. 2-3</td><td>“Trata-se de uma área de, aproximadamente, 5.170 metros quadrados...”</td></tr>
+        <tr><td><strong>A</strong></td><td>Matrícula do imóvel do réu (confrontações)</td><td>p. 4</td><td>“O imóvel do réu confronta-se ao oeste...” transcrição da matrícula</td></tr>
+        <tr><td><strong>A</strong></td><td>Matrícula do imóvel da autora (Lote 2849)</td><td>p. 5</td><td>“UM TERRENO sem benfeitorias... medindo de frente leste 41,04 m...”</td></tr>
+        <tr><td><strong>A</strong></td><td>Levantamento topográfico planimétrico (Eng. Agrimessor) – versão da autora</td><td>p. 5-6</td><td>“o levantamento topográfico planimétrico encomendado pela autora conclui que o réu avançou 09,14 metros...”</td></tr>
+        <tr><td><strong>A</strong></td><td>Imagens de satélite com marcações de distância (Rua Antônio Curi)</td><td>p. 6-7</td><td>“A ferramenta de medida do Google Earth indica que o réu iniciou a edificação a 26 metros da Rua Antônio Curi...”</td></tr>
+        <tr><td><strong>B</strong></td><td>Fotografias aéreas históricas (1953, 1965, 1995, 2006, 2013, 2020)</td><td>p. 4, 6 (anexo)</td><td>“Como prova disso temos as fotografias aéreas que seguem em anexo... dos anos 1953, 1965...”</td></tr>
+        <tr><td><strong>B</strong></td><td>Levantamento topográfico 2016 – mesmo engenheiro (Agrimessor)</td><td>p. 7</td><td>“Levantamento Topográfico e Planialtimétrico elaborado pelo engenheiro Eber Braz Vasconcellos ... ano de 2016 ... destaca a cerca limítrofe.”</td></tr>
+        <tr><td><strong>B</strong></td><td>Mapa do GeoPelotas (sistema municipal)</td><td>p. 8</td><td>“imagem extraída do mapa urbano configurável ... sistema Geo Pelotas ... linha divisória exatamente a linha de arame.”</td></tr>
+        <tr><td><strong>B</strong></td><td>Certidão de características – Prefeitura de Pelotas (área 57.277,07 m²)</td><td>p. 9</td><td>“certidão de característica do imóvel nº 129687/2024 ... área de 57.277,07 m².”</td></tr>
+    </tbody></table>
+
+    <!-- ERROS DE PORTUGUÊS IDENTIFICADOS -->
+    <h2>✍️ Erros de português (concordância, semântica, grafia)</h2>
+    <div class="error-item"><strong>Documento A, p. 2:</strong> “utilizar-se- ão capturas de rela e recortes” – <strong>correção:</strong> “utilizar-se-ão capturas de tela e recortes” (espaço indevido e “rela” por “tela”).</div>
+    <div class="error-item"><strong>Documento A, p. 6:</strong> “demonstra o réu edificou” – <strong>correção:</strong> “demonstra que o réu edificou” (falta da conjunção “que”).</div>
+    <div class="error-item"><strong>Documento B, p. 7:</strong> “a qual destaca” (referindo-se a levantamento) – <strong>correção:</strong> “o qual destaca” (levantamento é masculino).</div>
+    <div class="error-item"><strong>Documento B, p. 9-10:</strong> repetição do mesmo parágrafo “Nota-se que indicando perímetro...” – <strong>correção:</strong> eliminar duplicidade (erro de revisão).</div>
+    <div class="error-item"><strong>Documento B, p. 10:</strong> “à tal área” – <strong>correção:</strong> “a tal área” (crase indevida antes de pronome demonstrativo).</div>
+    <div class="error-item"><strong>Documento B, p. 11:</strong> “requente” – <strong>correção:</strong> “requerente” (troca de letra).</div>
+    <div class="error-item"><strong>Documento B, p. 15 (ementa):</strong> “APELAÇÃO CIVEL” – <strong>correção:</strong> “APELAÇÃO CÍVEL” (faltou acento).</div>
+    <div class="error-item"><strong>Documento B, p. 4:</strong> “Dá leitura do tópico III.A” – em contexto pode ser “Da leitura”, mas mantém-se como linguagem jurídica; se considerado, melhor “Da leitura”.</div>
+
+    <!-- LINHA DO TEMPO (ocorrências do Documento B) -->
+    <h2>⏳ Linha do tempo – fatos apontados na contestação (B)</h2>
+    <div class="timeline">
+        <div class="timeline-event">1953<span>1ª foto aérea</span></div>
+        <div class="timeline-event">1965<span>foto aérea</span></div>
+        <div class="timeline-event">1995<span>foto aérea</span></div>
+        <div class="timeline-event">2006<span>foto aérea</span></div>
+        <div class="timeline-event">2013<span>foto aérea</span></div>
+        <div class="timeline-event">2016<span>topo Eber (cerca)</span></div>
+        <div class="timeline-event">2020<span>foto aérea</span></div>
+        <div class="timeline-event">2021<span>Réu adquire imóvel</span></div>
+        <div class="timeline-event">2024<span>certidão municipal</span></div>
+    </div>
+    <p style="text-align: center; color: #2c3e50;">📸 Série histórica demonstra a mesma linha divisória por mais de 70 anos.</p>
+
+    <!-- GRÁFICO DAS DIFERENÇAS (conexões visuais) -->
+    <h2>📊 Conexões das contradições (infográfico)</h2>
+    <div class="graphic-diff">
+        <div class="graphic-col a">
+            <h3 style="margin-top: 0;">Versão da autora (A)</h3>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="padding: 10px; border-bottom: 1px solid #cba; display: flex; gap: 12px;"><span>📍</span> Área total: 63.075 m²</li>
+                <li style="padding: 10px; border-bottom: 1px solid #cba; display: flex; gap: 12px;"><span>🧱</span> Muro invade 1.000 m²</li>
+                <li style="padding: 10px; border-bottom: 1px solid #cba; display: flex; gap: 12px;"><span>📅</span> Posse desde 2012</li>
+                <li style="padding: 10px; display: flex; gap: 12px;"><span>🛰️</span> Google Earth 2024</li>
+            </ul>
+        </div>
+        <div class="connector">⮀⭢</div>
+        <div class="graphic-col b">
+            <h3 style="margin-top: 0;">Versão do réu (B) – contradiz</h3>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="padding: 10px; border-bottom: 1px solid #9bb7d4; display: flex; gap: 12px;"><span>🏛️</span> Área oficial: 57.277 m² (Prefeitura)</li>
+                <li style="padding: 10px; border-bottom: 1px solid #9bb7d4; display: flex; gap: 12px;"><span>🧵</span> Muro sobre linha de arame antiga</li>
+                <li style="padding: 10px; border-bottom: 1px solid #9bb7d4; display: flex; gap: 12px;"><span>📆</span> Posse de antecessores +40 anos</li>
+                <li style="padding: 10px; display: flex; gap: 12px;"><span>📷</span> Fotos aéreas 1953-2020, topo 2016</li>
+            </ul>
+        </div>
+    </div>
+    <p style="background: #eaf2f5; padding: 16px; border-radius: 24px; text-align: center;">✔️ O núcleo da contradição: <strong>existência (ou não) de invasão</strong> – réu contrapõe provas documentais históricas à medição unilateral da autora.</p>
+
+    <!-- linha de raciocínio -->
+    <h2>🧠 Linha de raciocínio (síntese analítica)</h2>
+    <div style="background: linear-gradient(145deg, #f9fcff, #eef3f9); padding: 28px; border-radius: 40px;">
+        <p style="font-size: 1.2rem;">1. A autora propõe ação demarcatória com base em levantamento recente que indica avanço de 9,14 m do réu sobre seu terreno.<br>
+        2. O réu, em contestação, não apenas nega o fato mas <strong>documenta a linha divisória pré-existente</strong> por mais de sete décadas: fotografias aéreas oficiais, levantamento do mesmo engenheiro (2016) e cadastro municipal.<br>
+        3. Ademais, aponta <strong>divergência material</strong> na área declarada (quase 6.000 m² a menos no registro público), o que fragiliza o cálculo da autora.<br>
+        4. Argui a <strong>exceção de usucapião</strong> (posse longeva dos antecessores), tornando a pretensão autora incompatível com a situação consolidada.<br>
+        5. Em análise preliminar, as provas do réu (documentos públicos históricos) conferem maior estabilidade à versão de que os limites sempre foram aqueles materializados pelo muro.</p>
+    </div>
+
+    <!-- RODAPÉ OBRIGATÓRIO -->
+    <div class="footer">
+        <span>Renato Rangel Guimarães</span>
+    </div>
+    <p style="text-align: right; font-size: 0.9rem; color: #7f8c8d; margin-top: 8px;">análise em 12/03/2026 · infográfico interativo</p>
+    <!-- pequeno aviso de quebra de página nos títulos h1 (CSS já aplicado) -->
+</div>
+
+</body></html>
