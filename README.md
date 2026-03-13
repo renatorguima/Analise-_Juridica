@@ -1,3 +1,3 @@
 - [**Documento 1**](./Contestacao.pdf) – Visualizar o PDF
-- [**Planilha de Dados**](./Análise de Contradições · Ação Demarcatória.html) – Baixar a planilha
+- [**Planilha de Dados**](./Ação Demarcatória.html) – Baixar a planilha
 - [**Imagem de Exemplo**](./imagens/foto.jpg) – Ver a imagem
