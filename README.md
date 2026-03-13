@@ -1,5 +1,3 @@
-A análise comtém os seguintes arquivos:
-- Análise de Contradições · Ação Demarcatória.html
-    este arquivo é o gerado a aprtir das análise das petições abaixo
-- Contestacao.pdf
-- Inicial.pdf
+- [**Documento 1**](./docs/arquivo1.pdf) – Visualizar o PDF
+- [**Planilha de Dados**](./dados/planilha.xlsx) – Baixar a planilha
+- [**Imagem de Exemplo**](./imagens/foto.jpg) – Ver a imagem
