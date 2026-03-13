@@ -1,3 +1,17 @@
 - [**Documento 1**](./Contestacao.pdf) – Visualizar o PDF
 - [**Planilha de Dados**](./Ação Demarcatória.html) – Baixar a planilha
 - [**Imagem de Exemplo**](./imagens/foto.jpg) – Ver a imagem
+
+# Análise Jurídica - Ação Demarcatória
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/renatorguima/Analise-_Juridica)
+
+Este repositório contém um infográfico jurídico que analisa as contradições entre uma petição inicial (Documento A) e uma contestação (Documento B) em uma Ação Demarcatória. O objetivo é demonstrar o uso de técnicas de Visual Law para simplificar a compreensão de disputas legais complexas.
+
+A análise se concentra em uma disputa sobre os limites de propriedade, onde a autora alega uma invasão de 1.000 m² por parte do réu, que por sua vez, sustenta que o muro construído segue uma divisa histórica de mais de 70 anos.
+
+## 📄 Visualização da Análise
+
+A análise completa, em formato de infográfico, pode ser visualizada diretamente no navegador.
+
+➡️ **[Abrir Análise de Contradições · Ação Demarcatória.html](./Análise%20de%20Contradições%20·%20Ação%20Demarcatória.html)**
+
