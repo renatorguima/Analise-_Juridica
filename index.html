@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu GitHub</title>
+    <title>Análise Jurídica - Renato Guimarães</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,66 +11,85 @@
             margin: 50px auto;
             padding: 20px;
             text-align: center;
-            background-color: #f0f0f0;
+            background-color: #f4f4f4;
         }
         
         h1 {
-            color: #333;
-            margin-bottom: 30px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
         }
         
         .nome {
-            color: #2c3e50;
-            font-size: 1.5em;
-            margin-bottom: 40px;
+            color: #2980b9;
+            font-size: 1.8em;
+            margin: 30px 0;
+            font-weight: bold;
         }
         
         .links {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
+            margin-top: 30px;
         }
         
         .link-button {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #2c3e50;
+            padding: 12px 25px;
+            background-color: #34495e;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            width: 250px;
-            transition: background-color 0.3s;
+            width: 280px;
+            transition: all 0.3s;
+            font-weight: 500;
         }
         
         .link-button:hover {
-            background-color: #34495e;
+            background-color: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .link-button i {
+            margin-right: 8px;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
-    <h1>Bem-vindo ao meu GitHub</h1>
+    <h1>📊 Analisador de Dados Jurídicos</h1>
     
     <div class="nome">
-        <!-- Substitua "Seu Nome" pelo seu nome real -->
-        <strong>Seu Nome</strong>
+        Renato Guimarães
     </div>
     
     <div class="links">
-        <!-- Link 1: Seu perfil do GitHub -->
-        <a href="https://github.com/seu-usuario" class="link-button" target="_blank">
-            Meu GitHub
+        <!-- Link 1: Documento da Ação Demarcatória (HTML) -->
+        <a href="Acao_Demarcatoria.html" class="link-button" target="_blank">
+            📄 Ver Ação Demarcatória
         </a>
         
-        <!-- Link 2: LinkedIn (se tiver) -->
-        <a href="https://linkedin.com/in/seu-perfil" class="link-button" target="_blank">
-            LinkedIn
+        <!-- Link 2: Planilha de Dados -->
+        <a href="https://github.com/renatorguima/Analise-_Juridica/raw/main/README.md" class="link-button" target="_blank">
+            📊 Baixar Planilha de Dados
         </a>
         
-        <!-- Link 3: Seu portfólio ou outro projeto -->
-        <a href="#" class="link-button" target="_blank">
-            Meu Portfólio
+        <!-- Link 3: Documento da Contestação (PDF) -->
+        <a href="Contestacao.pdf" class="link-button" target="_blank">
+            ⚖️ Ver Contestação (PDF)
         </a>
+    </div>
+    
+    <div class="footer">
+        Repositório: <a href="https://github.com/renatorguima/Analise-_Juridica" target="_blank">renatorguima/Analise-_Juridica</a>
     </div>
 </body>
 </html>
