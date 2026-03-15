@@ -3,265 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise Jurídica - Renato Guimarães</title>
+    <title>Análise Jurídica - Renato Rangel Guimarães</title>
     <style>
-        /* Reset e estilos base */
-        * {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #f4f7f9;
+            color: #333;
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #24292e;
-            background-color: #f6f8fa;
-            padding: 20px;
-        }
-
         .container {
             max-width: 1000px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 30px;
+            margin: 30px auto;
+            padding: 20px;
         }
-
-        /* Cabeçalho com nome */
-        .header {
+        header {
+            background: linear-gradient(135deg, #2c3e50, #1e2a36);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 10px 10px 0 0;
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #e1e4e8;
         }
-
-        .nome {
-            font-size: 2.2em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-weight: 600;
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
         }
-
-        .subtitulo {
-            color: #586069;
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .author-section {
+            background-color: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.3em;
+            border-bottom: 3px solid #e67e22;
+        }
+        .description-card {
+            background-color: #e8f4fd;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-style: italic;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .description-card p {
+            margin: 0;
             font-size: 1.1em;
+            color: #2c3e50;
         }
-
-        /* Seção dos 3 links principais */
-        .links-destaque {
-            background-color: #f1f8ff;
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            text-align: center;
-            border: 1px solid #c8e1ff;
-        }
-
-        .links-destaque h2 {
-            color: #0366d6;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-
-        .link-grid {
+        .links-grid {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
+            margin: 30px 0;
         }
-
         .link-card {
             background: white;
-            padding: 20px 30px;
-            border-radius: 6px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            flex: 1 1 250px;
+            max-width: 280px;
             text-decoration: none;
-            color: #24292e;
-            border: 1px solid #e1e4e8;
-            transition: all 0.3s ease;
-            min-width: 200px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            color: #333;
+            border: 1px solid #ddd;
         }
-
         .link-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            border-color: #0366d6;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
         }
-
-        .link-card .titulo {
-            font-weight: 600;
-            color: #0366d6;
-            margin-bottom: 5px;
-        }
-
-        .link-card .descricao {
-            font-size: 0.9em;
-            color: #586069;
-        }
-
-        /* Seção README adaptada */
-        .readme-section {
-            padding: 20px;
-            background: white;
-            border: 1px solid #e1e4e8;
-            border-radius: 6px;
-        }
-
-        .readme-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eaecef;
-        }
-
-        .readme-header h2 {
-            font-size: 1.5em;
-            color: #24292e;
-        }
-
-        .readme-content {
-            color: #24292e;
-        }
-
-        .readme-content h1 {
-            font-size: 2em;
-            margin: 20px 0 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eaecef;
-        }
-
-        .readme-content h2 {
-            font-size: 1.5em;
-            margin: 20px 0 15px;
-        }
-
-        .readme-content table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-        }
-
-        .readme-content th,
-        .readme-content td {
-            border: 1px solid #dfe2e5;
-            padding: 8px 12px;
-            text-align: left;
-        }
-
-        .readme-content th {
-            background-color: #f6f8fa;
-            font-weight: 600;
-        }
-
-        .readme-content tr:nth-child(even) {
-            background-color: #f6f8fa;
-        }
-
-        .readme-content code {
-            background-color: rgba(27,31,35,0.05);
-            padding: 3px 6px;
-            border-radius: 3px;
-            font-family: 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-            font-size: 0.9em;
-        }
-
-        .readme-content a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-
-        .readme-content a:hover {
-            text-decoration: underline;
-        }
-
-        /* Botão do repositório */
-        .repo-link {
-            text-align: center;
-            margin: 30px 0 20px;
-            padding: 20px;
-            background: #f6f8fa;
-            border-radius: 6px;
-        }
-
-        .repo-button {
-            display: inline-block;
-            padding: 12px 30px;
+        .link-card .card-header {
             background-color: #2c3e50;
             color: white;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .link-card .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .link-card .card-body p {
+            margin: 0 0 15px;
+            color: #666;
+        }
+        .link-card .btn {
+            display: inline-block;
+            background-color: #e67e22;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
+            font-weight: bold;
             transition: background-color 0.3s;
         }
-
-        .repo-button:hover {
-            background-color: #1e2b37;
+        .link-card .btn:hover {
+            background-color: #d35400;
         }
-
-        /* Footer */
+        .readme-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+        }
+        .readme-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .readme-content {
+            overflow-x: auto;
+        }
+        .readme-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .readme-content th {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        .readme-content td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .readme-content tr:hover {
+            background-color: #f5f5f5;
+        }
         .footer {
             text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eaecef;
-            color: #586069;
+            margin-top: 40px;
+            padding: 20px;
+            color: #777;
             font-size: 0.9em;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>⚖️ Análise Jurídica</h1>
+        <p>Ferramentas e documentos para análise de dados jurídicos</p>
+    </header>
+
+    <div class="author-section">
+        <strong>Renato Guimarães</strong>
+    </div>
+
     <div class="container">
-        <!-- Cabeçalho com nome -->
-        <div class="header">
-            <div class="nome">⚖️ Renato Guimarães</div>
-            <div class="subtitulo">Análise de Documentos Jurídicos · GitHub</div>
+        <div class="description-card">
+            <p>📌 Este projeto foi desenvolvido com uso de ferramentas de IA de modo a facilitar as demandas jurídicas que envolvam grandes volumes de dados para analisar. A combinação de técnicas de processamento e visualização permite uma compreensão mais rápida e profunda de processos e documentos complexos.</p>
         </div>
 
-        <!-- Seção dos 3 links principais (destaque) -->
-        <div class="links-destaque">
-            <h2>📌 Acesse os Documentos</h2>
-            <div class="link-grid">
-                <!-- Link 1: Ação Demarcatória (HTML) -->
-                <a href="https://renatorguima.github.io/Analise-_Juridica/Acao_Demarcatoria.html" class="link-card" target="_blank">
-                    <div class="titulo">⚖️ Ação Demarcatória</div>
-                    <div class="descricao">Documento HTML com análise e infográfico</div>
-                </a>
-                
-                <!-- Link 2: Petição Inicial (PDF) -->
-                <a href="https://renatorguima.github.io/Analise-_Juridica/Inicial.pdf" class="link-card" target="_blank">
-                    <div class="titulo">📄 Petição Inicial</div>
-                    <div class="descricao">Petição inicial em formato PDF</div>
-                </a>
-                
-                <!-- Link 3: Contestação (PDF) -->
-                <a href="https://renatorguima.github.io/Analise-_Juridica/Contestacao.pdf" class="link-card" target="_blank">
-                    <div class="titulo">📑 Contestação</div>
-                    <div class="descricao">Peça de contestação em PDF</div>
-                </a>
-            </div>
+        <div class="links-grid">
+            <!-- Link 1: Ação Demarcatória (HTML) -->
+            <a href="https://renatorguima.github.io/Analise-_Juridica/Acao_Demarcatoria.html" class="link-card" target="_blank">
+                <div class="card-header">📄 Ação Demarcatória</div>
+                <div class="card-body">
+                    <p>Documento HTML com análise e infográfico da ação demarcatória</p>
+                    <span class="btn">Visualizar →</span>
+                </div>
+            </a>
+
+            <!-- Link 2: Contestação (PDF) -->
+            <a href="https://renatorguima.github.io/Analise-_Juridica/Contestacao.pdf" class="link-card" target="_blank">
+                <div class="card-header">📑 Contestação</div>
+                <div class="card-body">
+                    <p>Peça de contestação em formato PDF para consulta</p>
+                    <span class="btn">Abrir PDF →</span>
+                </div>
+            </a>
+
+            <!-- Link 3: Petição Inicial (PDF) -->
+            <a href="https://renatorguima.github.io/Analise-_Juridica/Inicial.pdf" class="link-card" target="_blank">
+                <div class="card-header">📝 Petição Inicial</div>
+                <div class="card-body">
+                    <p>Petição inicial do processo em formato PDF</p>
+                    <span class="btn">Abrir PDF →</span>
+                </div>
+            </a>
         </div>
 
-        <!-- Seção README incorporado com links ajustados -->
+        <!-- Seção README incorporado -->
         <div class="readme-section">
-            <div class="readme-header">
-                <svg height="24" viewBox="0 0 16 16" width="24" fill="#586069">
-                    <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
-                </svg>
-                <h2>README.md</h2>
-            </div>
-            
+            <h2>📚 Sobre o Projeto</h2>
             <div class="readme-content">
-                <!-- Conteúdo do README adaptado do seu repositório -->
-                <h1>⚖️ Análise Jurídica - Renato Guimarães</h1>
-                
                 <p>Repositório dedicado à análise de documentos jurídicos, contendo petições iniciais, contestações e ações demarcatórias para estudo e referência.</p>
-                
-                <h2>📋 Documentos Disponíveis</h2>
-                
+
+                <h3>📋 Documentos Disponíveis</h3>
                 <table>
                     <thead>
                         <tr>
@@ -274,7 +217,7 @@
                         <tr>
                             <td><strong>Ação Demarcatória</strong></td>
                             <td>HTML</td>
-                            <td>Documento contém análise jurídica e a apresentação em formato de infográfico da ação demarcatória</td>
+                            <td>Documento contém análise jurídica e apresentação em formato de infográfico da ação demarcatória</td>
                         </tr>
                         <tr>
                             <td><strong>Contestação</strong></td>
@@ -288,66 +231,16 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <h3>🚀 Acesse os Documentos</h3>
+                <p>Você pode visualizar todos os documentos diretamente através dos cards acima ou clicando nos links da tabela.</p>
                 
-                <h2>🚀 Acesse os Documentos</h2>
                 
-                <p>Você pode visualizar todos os documentos diretamente através dos links abaixo:</p>
-                
-                <ul>
-                    <li><a href="https://renatorguima.github.io/Analise-_Juridica/Acao_Demarcatoria.html" target="_blank">📄 Ação Demarcatória (HTML)</a></li>
-                    <li><a href="https://renatorguima.github.io/Analise-_Juridica/Contestacao.pdf" target="_blank">📑 Contestação (PDF)</a></li>
-                    <li><a href="https://renatorguima.github.io/Analise-_Juridica/Inicial.pdf" target="_blank">📋 Petição Inicial (PDF)</a></li>
-                </ul>
-                
-                <!-- Seção de commits do GitHub adaptada -->
-                <h2>📊 Commits Recentes</h2>
-                
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Arquivo</th>
-                            <th>Última Atualização</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>Acao_Demarcatoria.html</code></td>
-                            <td>15/03/2026</td>
-                        </tr>
-                        <tr>
-                            <td><code>Contestacao.pdf</code></td>
-                            <td>13/03/2026</td>
-                        </tr>
-                        <tr>
-                            <td><code>Inicial.pdf</code></td>
-                            <td>16/03/2026</td>
-                        </tr>
-                        <tr>
-                            <td><code>README.md</code></td>
-                            <td>16/03/2026</td>
-                        </tr>
-                        <tr>
-                            <td><code>index.html</code></td>
-                            <td>15/03/2026</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
 
-        <!-- Link para o repositório GitHub -->
-        <div class="repo-link">
-            <a href="https://github.com/renatorguima/Analise-_Juridica" class="repo-button" target="_blank">
-                <svg height="16" viewBox="0 0 16 16" width="16" style="margin-right: 8px; vertical-align: text-bottom;" fill="currentColor">
-                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                </svg>
-                Ver repositório completo no GitHub
-            </a>
-        </div>
-
-        <!-- Footer -->
         <div class="footer">
-            <p>Desenvolvido por Renato Guimarães · Análise Jurídica · 2026</p>
+            <p>🔗 <a href="https://github.com/renatorguima/Analise-_Juridica" target="_blank" style="color: #e67e22;">Ver no GitHub</a> | Desenvolvido para facilitar análises jurídicas com apoio de IA</p>
         </div>
     </div>
 </body>
